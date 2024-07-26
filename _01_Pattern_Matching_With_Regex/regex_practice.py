@@ -73,3 +73,14 @@ print(batRegex.findall('Batmobile lost a wheel, Batman fell, need Batcopter now,
 # If there are groups in regex, findall() will return list of tuples. Each tuple represents a found match
 phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d)')
 print(phoneNumRegex.findall('Home: 415-541-8588 Work: 022-222-3331'))
+
+# Character class
+# Number then one space then some string(may be empty)
+regex = re.compile(r'\d+\s\w*')
+print(regex.findall('10 mangoes 12 oranges 13 pineapples 14 cakes 15 '))
+# Define your own character class using '[]'
+vowelRegex = re.compile(r'[aeiouAEIOU]')
+print(vowelRegex.findall('Hi My name IS Rajan Kumar Singh'))
+print(re.compile(r'[a-zA-Z0-9]').findall('a d^n2'))
+consonantRegex = re.compile(r'[^aeiouAEIOU]')
+print(consonantRegex.findall('Hi My name IS Rajan Kumar Singh'))
